@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">PS</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link {% if page.url == '/papers/' %}active{% endif %}"
+            href="{{ '/papers' | relative_url }}"
+            >papers</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link {% if page.url == '/stories/' %}active{% endif %}"
+            href="{{ '/stories' | relative_url }}"
+            >stories</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link {% if page.url == '/gallery/' %}active{% endif %}"
+            href="{{ '/gallery' | relative_url }}"
+            >gallery</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link {% if page.url == '/about/' %}active{% endif %}"
+            href="{{ '/about' | relative_url }}"
+            >about</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,19 @@
+---
+layout: default
+title: gallery
+permalink: /gallery/
+images:
+  - url: "/assets/images/gallery/pondering_duck.jpeg"
+    caption: "Pondering duck"
+  - url: "/assets/images/gallery/eat_food.jpeg"
+    caption: "Eat food"
+---
+
+<div class="gallery-container">
+  {% for image in page.images %}
+  <div class="gallery-item">
+    <img src="{{ image.url }}" alt="{{ image.caption }}" />
+    <p class="gallery-caption">{{ image.caption }}</p>
+  </div>
+  {% endfor %}
+</div>

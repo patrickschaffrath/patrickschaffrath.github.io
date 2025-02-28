@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    {% include styles.html %} {% include mathjax.html %}
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    {% include navbar.html %}
+
+    <main class="d-flex justify-content-center">
+      <div class="main-container w-100">
+        <h1>{{ page.title }}</h1>
+        <h5>by Patrick Schaffrath</h5>
+        <hr />
+        {% if page.revision %}
+        <h6>revision {{ page.revision }}</h6>
+        {% else %}
+        <h6>revision 0</h6>
+        {% endif %}
+        <article>{{ content }}</article>
+      </div>
+    </main>
+  </body>
+</html>

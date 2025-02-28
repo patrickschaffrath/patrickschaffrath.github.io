@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }}</title>
+    {% include styles.html %}
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    {% include navbar.html %}
+
+    <main class="d-flex justify-content-center">
+      <div class="main-container w-100">{{ content }}</div>
+    </main>
+  </body>
+</html>
