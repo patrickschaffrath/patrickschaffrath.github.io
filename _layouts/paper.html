@@ -11,15 +11,17 @@
 
     <main class="d-flex justify-content-center">
       <div class="main-container w-100">
-        <h1>{{ page.title }}</h1>
-        <h5>by Patrick Schaffrath</h5>
-        <hr />
-        {% if page.revision %}
-        <h6>revision {{ page.revision }}</h6>
-        {% else %}
-        <h6>revision 0</h6>
-        {% endif %}
-        <article>{{ content }}</article>
+        <div class="text-container">
+          <h1>{{ page.title }}</h1>
+          <h5>by Patrick Schaffrath</h5>
+          {% if page.revision %}
+          <h6 class="paper-revision">revision {{ page.revision }}</h6>
+          {% else %}
+          <h6 class="paper-revision">revision 0</h6>
+          {% endif %}
+          <hr />
+          <article>{{ content }}</article>
+        </div>
       </div>
     </main>
   </body>
