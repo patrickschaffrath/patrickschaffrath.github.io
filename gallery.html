@@ -3,17 +3,38 @@ layout: default
 title: gallery
 permalink: /gallery/
 images:
-  - url: "/assets/images/gallery/pondering_duck.jpeg"
+  - name: "pondering_duck"
     caption: "Pondering duck"
-  - url: "/assets/images/gallery/eat_food.jpeg"
+  - name: "butterfly"
+    caption: "Butterfly"
+  - name: "eat_food"
     caption: "Eat food"
 ---
 
 <div class="gallery-container">
   {% for image in page.images %}
   <div class="gallery-item">
-    <img src="{{ image.url }}" alt="{{ image.caption }}" />
+    <img
+      src="/assets/images/gallery/{{ image.name }}_small.jpeg"
+      data-src="/assets/images/gallery/{{ image.name }}.jpeg"
+      alt="{{ image.caption }}"
+      class="gallery-image lazy-image"
+    />
     <p class="gallery-caption">{{ image.caption }}</p>
   </div>
   {% endfor %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const lazyImages = document.querySelectorAll(".lazy-image");
+    lazyImages.forEach((img) => {
+      const tempImg = new Image();
+      tempImg.src = img.dataset.src;
+      tempImg.onload = () => {
+        img.src = img.dataset.src;
+        img.classList.add("lazy-image-loaded");
+      };
+    });
+  });
+</script>
