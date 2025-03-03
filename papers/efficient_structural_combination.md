@@ -34,10 +34,10 @@ The last variable we substituted is the output of the final gate and gives us th
 
 Horn-satisfiability supports *efficient structural combination* for $$k = 3$$. For every Horn clause there is a set of equivalent Horn clauses with three literals each, by applying the following rules:
 
-1. $$A \Leftrightarrow (1 \land 1 \implies A)$$
-2. $$\lnot A \Leftrightarrow (A \land 1 \implies 0)$$
-3. $$(A \implies B) \Leftrightarrow (A \land 1 \implies B)$$
-4. $$(A \land B \land C \implies D) \Leftrightarrow (A \land B \implies E), (E \land C \implies D)$$
+1. $$A \Leftrightarrow$$ $$(1 \land 1 \implies A)$$
+2. $$\lnot A \Leftrightarrow$$ $$(A \land 1 \implies 0)$$
+3. $$(A \implies B) \Leftrightarrow$$ $$(A \land 1 \implies B)$$
+4. $$(A \land B \land C \implies D) \Leftrightarrow$$ $$(A \land B \implies E), (E \land C \implies D)$$
 
 The principle of the last rule can be applied for any clause with more than three literals, resulting in a set of clauses with three literals each.
 
@@ -64,7 +64,7 @@ This should follow from the fact that every decision problem in *P* can be repre
 Supporting *efficient structural combination* as an inherent property of decision problems in *P*.
 We do not always have to go down to Boolean Circuit representations to get to that property.
 
-2SAT supports *efficient structural combination* for $$k = 2$$. We take the implicative normal form of each clause. For example $$A \lor B$$ would become $$\lnot A \implies B$$ and $$\lnot B \implies A$$, with solutions $$(A = 0 \land B = 1) \lor (A = 1 \land B = 0) \lor (A = 1 \land B = 1)$$.
+2SAT supports *efficient structural combination* for $$k = 2$$. We take the implicative normal form of each clause. For example $$A \lor B$$ would become $$\lnot A \implies B$$ and $$\lnot B \implies A$$, with solutions $$(A = 0 \land B = 1)\ \lor$$ $$(A = 1 \land B = 0)\ \lor$$ $$(A = 1 \land B = 1)$$.
 
 By transitively combining all implications, we can have two outcomes:
 
