@@ -21,8 +21,9 @@
 title: PS
 description: >- # this means to ignore newlines until "baseurl:"
   philosophy - art - science - writings - photos
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+domain: patrickschaffrath.github.io
+url: https://patrickschaffrath.github.io # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: /REPOSITORY-NAME/ # the subpath of your site, e.g. /blog
 github_username: patrickschaffrath
 
 
