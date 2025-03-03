@@ -12,5 +12,17 @@ permalink: /about/
     stories, photos and artistically scientific writings. Enjoy!
   </p>
 
-  <a href="mailto:{{ site.email }}" title="Contact me">Contact me</a>
+  <a id="email-link" title="Contact me via Email">Contact me</a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let user = "patrickschaffrath";
+    let domain = "icloud.com";
+    let email = user + "@" + domain;
+    let mailtoLink = "mailto:" + email;
+
+    let emailElement = document.getElementById("email-link");
+    emailElement.href = mailtoLink;
+  });
+</script>
