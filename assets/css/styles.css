@@ -4,6 +4,10 @@ main {
         font-size: x-large;
 }
 
+main:has(.gallery-container) {
+        background-color: #666;
+}
+
 .main-container {
         max-width: 900px;
         margin: 30px auto;
@@ -52,8 +56,12 @@ main {
 }
 
 .gallery-item {
-        margin-bottom: 50px;
+        margin-bottom: 80px;
         text-align: center;
+}
+
+.gallery-item:last-of-type {
+        margin-bottom: 0px;
 }
 
 .gallery-item img {
@@ -61,12 +69,6 @@ main {
         height: auto;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-caption {
-        font-size: 1.1rem;
-        color: #666;
-        margin-top: 10px;
 }
 
 .gallery-image.lazy-image {
