@@ -1,4 +1,9 @@
-<a href="{{ include.url }}" class="card-link text-decoration-none">
+<a
+  href="{{ include.url }}"
+  class="card-link text-decoration-none"
+  target="{% if include.target contains 'blank' %}_blank{% else %}_self{% endif %}"
+  rel="noreferrer"
+>
   <div class="card shadow-sm">
     <div class="card-body">
       <h3 class="card-title">{{ include.title }}</h3>

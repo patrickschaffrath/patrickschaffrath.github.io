@@ -4,10 +4,13 @@ title: stories
 permalink: /stories/
 ---
 
-<div class="pdf-container">
-  <embed
-    src="/assets/documents/stories/geschichten.pdf#view=fith"
-    type="application/pdf"
-    class="pdf-embed"
-  />
+<div class="container">
+  <div class="row g-4">
+    <div class="col-md-6">
+      {% include card.html
+      url="/assets/documents/stories/geschichten.pdf#view=fith" title="Short
+      stories" description="A couple of stories written in German."
+      target="blank" %}
+    </div>
+  </div>
 </div>
