@@ -48,3 +48,6 @@ github_username: patrickschaffrath
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+include:
+  - CNAME
