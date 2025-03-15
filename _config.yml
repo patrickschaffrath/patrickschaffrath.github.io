@@ -36,6 +36,7 @@ permalink: pretty
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Build settings
 
