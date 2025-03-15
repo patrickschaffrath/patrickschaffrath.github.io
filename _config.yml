@@ -32,6 +32,8 @@ social:
   links:
     - https://github.com/patrickschaffrath
 
+permalink: pretty
+
 plugins:
   - jekyll-seo-tag
 
