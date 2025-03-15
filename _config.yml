@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: PS
-description: >- # this means to ignore newlines until "baseurl:"
+title: Patrick Schaffrath
+description: >- # >- will ignore newlines until next variable
   philosophy - art - science - writings - photos
 domain: patrickschaffrath.github.io
 url: https://patrickschaffrath.github.io # the base hostname & protocol for your site, e.g. http://example.com
