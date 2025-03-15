@@ -21,11 +21,19 @@
 title: Patrick Schaffrath
 description: >- # >- will ignore newlines until next variable
   philosophy - art - science - writings - photos
-domain: patrickschaffrath.github.io
-url: https://patrickschaffrath.github.io # the base hostname & protocol for your site, e.g. http://example.com
+domain: patrickschaffrath.com
+url: https://patrickschaffrath.com # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 github_username: patrickschaffrath
+author:
+  name: Patrick Schaffrath
+  url: https://patrickschaffrath.com
+social:
+  links:
+    - https://github.com/patrickschaffrath
 
+plugins:
+  - jekyll-seo-tag
 
 # Build settings
 
