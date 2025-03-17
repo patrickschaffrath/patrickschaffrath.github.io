@@ -72,12 +72,12 @@ main:has(.gallery-container) {
 }
 
 .gallery-image.lazy-image {
-    filter: blur(2px);
-    transition: filter 0.5s ease-in-out;
+        filter: blur(2px);
+        transition: filter 0.5s ease-in-out;
 }
 
 .gallery-image.lazy-image-loaded {
-    filter: blur(0);
+        filter: blur(0);
 }
 
 .paper-revision {
@@ -91,4 +91,4 @@ main:has(.gallery-container) {
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 20px;
-    }
+}
