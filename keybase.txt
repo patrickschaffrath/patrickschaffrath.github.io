@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/patschaffrath
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://patrickschaffrath.com
+  * I am patschaffrath (https://keybase.io/patschaffrath) on keybase.
+  * I have a public key with fingerprint 6299 F7F9 52A1 54F9 5445  9413 C665 9E4B 04B1 4AFB
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120e0141e322547917b22d05905d3377ca7cb6f39972917f58b2cdab251930a774d0a",
+      "fingerprint": "6299f7f952a154f954459413c6659e4b04b14afb",
+      "host": "keybase.io",
+      "key_id": "c6659e4b04b14afb",
+      "kid": "0101525f93afb348dce11fb82259e4abcccaf241b76d0099ef53eba0d23d2c3f87570a",
+      "uid": "0bc2c3eeae66cc67415b374dd098c719",
+      "username": "patschaffrath"
+    },
+    "service": {
+      "hostname": "patrickschaffrath.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1742820634,
+  "expire_in": 157680000,
+  "prev": "e9d0e6b1caac61a7ded73d2ffdca8afd65c04d597cdeb98cb6e39333e8881e07",
+  "seqno": 26,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMN5AnicbZJ9UFRVGMYXgk1WEJ1wFFCUC4hMpPf7A7J0Rm1yB4kAQxDXe889d/e6
+sLvs3oWAiGHKUZBqDI0IJZSRND+QiiYdY6TAFGqoKNQaEQMUTPkYjSTM7Szl+E/n
+nzPnPb/3Oc/zzmkPekJn8DkP64x+zRumfbraGt068/X0sGJMssuFWEIxZoUzG8yR
+oUszWVUZS8BwgsQhTtAEpEiSoTmB4CSSlHFGwBmZojgOiByQWIUSBI5ElwrDSySQ
+RYlkCIHCRY6jZVzE4jFFtZmh0+FUbRqSZUlBUDhFYEiRYGi00zQj0AQFWJYRIC3h
+tETQoiKhRovd5e1A5iTRBVeodlRDB9OMvf/hH/nGCYZkFIFCVYrmZQAJQpF4FALx
+ogQAEBWSJiSOlXFcEKDCUFAScZmkZBJQCs8x3Ixv979yEkBVCEXIsgCwHE0wEoWi
+ybjAA44QvKALOm1iLkS0Q9RcwCIqilPULFhJPIau8lUAvdP1xnmMOVVgfYyuAPZc
+pORw2jU7sOcgxKJpDleCV0IrdHh7CqBk+k/NJKk2GU0VdeRDp0u127AEApFAU73y
+BEeTPImzFB2PwVcdqhOaVC/BcCyPo+V9B+YjSSjIOGQlAogiYAmRk6HMoSEoigxE
+XlRklgE4LTMCB2QoobgSCymBoijI8zwBcQ7z5suz2bEEkkU+RTPSdKlmm6i5nRAr
++apti5/Ox6DT+/t6v5vOEDD30SecPhrsyTtddX974P099MvZ9S7fkxGhs5mBrqw/
+up7RG/JePziyJu+ts+uano0y9ryD7d0UF527qKx+ZEf1PCm29s/X2JqxB31nFqbU
+Wy/GPU0tH1s5qzw6xvLR2tmrq7Zn6E5OB7Wd+eV0dUXp8bWNuQ+3ESmflOkb4pNf
+2RdwqfHH+f4P+rCrHScOuH/YF6vNmhva6e42lqycNiZWbXBc+aD13PhnjmNzhmN/
+jniqsPVeZmrd+a/fHw7b6fxwojfmkm9EyK3MG7bBggW1/cYRsskQnq3UOPw7Pn5j
+y+7w9vc2Tzab3p7M4PL/vukX0mN8PiR4Sf9NImxI/73fkRPJ17LWXx0IvaDx5sEL
+psqozCVrDnmaXde/w8blY+YdX/hOpSd9WpR2lhrblBudervl18TEmLttx63VfPe2
+ZZbFVfpV+t29l2POXbzb9fAWHBmWq+KKuN6J0qRlnqXB9Tc2djbsKeo4tZodSiMm
+Szp30Qunn1vgDsqItAQ1Kocr62oPq6lp2WxP9KiFLewJaGn1mC392rXl2UPhf6kt
+/eVHXmxLPFU+WvF5xv7f53cGJRXXZI0Gjm+1znNVpBgI+s4LZbc9gave/c0zOLDz
+aNnegchv3yz9ZvxeevHiggN38pxTUUsrD355ZRdcVFe2nt9qMoZkG/uSI/P3H/qp
+IwCMNW7eONWQ/uRL3RM57TmX5zRZgv8BzLLIvg==
+=62OU
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/patschaffrath
+
+==================================================================
