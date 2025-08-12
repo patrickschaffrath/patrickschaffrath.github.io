@@ -85,10 +85,25 @@ main:has(.gallery-container) {
         margin-bottom: -10px;
 }
 
+.article-canvas {
+        width: 100%;
+        height: 500px;
+}
+
 .about-profile-image {
         width: 200px;
         height: 200px;
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 20px;
+}
+
+@keyframes pulseOpacity {
+  0%   { opacity: 0.05; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.05; }
+}
+
+.pulsate {
+  animation: pulseOpacity 8.0s ease-in-out infinite;
 }

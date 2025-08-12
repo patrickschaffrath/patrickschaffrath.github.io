@@ -23,5 +23,12 @@
         </div>
       </div>
     </main>
+
+    {% assign file_name = page.name | split: '.' | first %} {% assign
+    script_path = '/assets/js/' | append: file_name | append: '.js' %} {% assign
+    js_file = site.static_files | where: "path", script_path | first %}{% if
+    js_file %}
+    <script type="module" src="{{ script_path | relative_url }}"></script>
+    {% endif %}
   </body>
 </html>
