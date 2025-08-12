@@ -14,129 +14,56 @@ function convexHulls(vertices) {
 }
 
 function convexHull([a, b, c, d]) {
-  let crossProductSigns = map(
+  const orientations = [
     [
       [a, b, c],
       [b, c, d],
       [c, d, a],
       [d, a, b],
     ],
-    crossProductSign
-  );
-  if (Math.abs(sum(crossProductSigns)) === 4) {
-    return [a, b, c, d];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[0] + crossProductSigns[1] + crossProductSigns[2]
-    ) === 3
-  ) {
-    return [b, c, d];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[1] + crossProductSigns[2] + crossProductSigns[3]
-    ) === 3
-  ) {
-    return [c, d, a];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[2] + crossProductSigns[3] + crossProductSigns[0]
-    ) === 3
-  ) {
-    return [d, a, b];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[3] + crossProductSigns[0] + crossProductSigns[1]
-    ) === 3
-  ) {
-    return [a, b, c];
-  }
-
-  crossProductSigns = map(
     [
       [a, b, d],
       [b, d, c],
       [d, c, a],
       [c, a, b],
     ],
-    crossProductSign
-  );
-  if (Math.abs(sum(crossProductSigns)) === 4) {
-    return [a, b, d, c];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[0] + crossProductSigns[1] + crossProductSigns[2]
-    ) === 3
-  ) {
-    return [b, d, c];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[1] + crossProductSigns[2] + crossProductSigns[3]
-    ) === 3
-  ) {
-    return [d, c, a];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[2] + crossProductSigns[3] + crossProductSigns[0]
-    ) === 3
-  ) {
-    return [c, a, b];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[3] + crossProductSigns[0] + crossProductSigns[1]
-    ) === 3
-  ) {
-    return [a, b, d];
-  }
-
-  crossProductSigns = map(
     [
       [a, c, b],
       [c, b, d],
       [b, d, a],
       [d, a, c],
     ],
-    crossProductSign
-  );
-  if (Math.abs(sum(crossProductSigns)) === 4) {
-    return [a, c, b, d];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[0] + crossProductSigns[1] + crossProductSigns[2]
-    ) === 3
-  ) {
-    return [c, b, d];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[1] + crossProductSigns[2] + crossProductSigns[3]
-    ) === 3
-  ) {
-    return [b, d, a];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[2] + crossProductSigns[3] + crossProductSigns[0]
-    ) === 3
-  ) {
-    return [d, a, c];
-  }
-  if (
-    Math.abs(
-      crossProductSigns[3] + crossProductSigns[0] + crossProductSigns[1]
-    ) === 3
-  ) {
-    return [a, c, b];
+  ];
+
+  const crossProductSignsByOrientations = map(orientations, (orientation) => {
+    return map(orientation, crossProductSign);
+  });
+
+  // Check for four vertex convex hull.
+  for (let i = 0; i < 3; i++) {
+    if (Math.abs(sum(crossProductSignsByOrientations[i])) === 4) {
+      // Hull of four vertices, for example [...[a, b, c], d].
+      return [...orientations[i][0], orientations[i][3][0]];
+    }
   }
 
+  // Check for three vertex convex hull.
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 4; j++) {
+      if (
+        Math.abs(
+          crossProductSignsByOrientations[i][j] +
+            crossProductSignsByOrientations[i][(j + 1) % 4] +
+            crossProductSignsByOrientations[i][(j + 2) % 4]
+        ) === 3
+      ) {
+        // Hull of three vertices, for example [d, a, c].
+        return orientations[i][(j + 1) % 4];
+      }
+    }
+  }
+
+  // Default for degenerate hull.
   return [];
 }
 
