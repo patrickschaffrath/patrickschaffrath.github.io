@@ -93,10 +93,13 @@ function drawHullsWithEdgesByCount(ctx, hulls, width, height) {
 }
 
 function alphaFromCount(count, maxCount) {
+  if (count === maxCount) {
+    return 1;
+  }
   const base = 0.9;
-  const floor = 0.03;
-  // max -> base, (max-1) -> base^2, (max-10) -> base^11
-  const stepsBelowPlusOne = Math.max(0, maxCount + 1 - count);
-  const a = Math.pow(base, stepsBelowPlusOne);
+  const floor = 0.02;
+  // max -> 1, (max-1) -> base, (max-20) -> base^2
+  const stepsBelow = Math.max(0, maxCount - count);
+  const a = Math.pow(base, Math.max(1, stepsBelow / 10));
   return Math.max(floor, Math.min(1, a));
 }
