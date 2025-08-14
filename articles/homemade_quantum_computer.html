@@ -4,6 +4,43 @@ title: Homemade quantum computer
 revision: 0
 ---
 
+<p>
+  The idea that sparked my paper on <em>efficient structural combination</em>
+  came from the question "can we see a solution to a problem" by layering many
+  sub solutions on top of each other?
+</p>
+<p>
+  I was looking for something that can be displayed graphically. One of my
+  favorite problems, the problem of finding a convex hull for a given set of
+  vertices, was examined for that property. What do we see when layering
+  solutions for some vertex combinations from the whole set of vertices?
+</p>
+<p>
+  The answer is surprisingly simple. Going over solutions for every combination
+  of four vertices, the edges that are also part of the global solution appear
+  most often in comparison to any other edge in those sub solutions. Visually
+  those edges are the most bold edges when drawing each sub solution into one
+  graph with all vertices. How to build a homemade quantum computer that gives
+  us those visual solutions?
+</p>
+<p>
+  All we need is very thin layers of dark lacquered transparent film, where each
+  layer can be scraped to let light shine trough. Every layer will represent a
+  sub solution and get scraped along the three or four edges of the convex hull.
+  After we scraped each layer, they will be aligned and stacked on top of each
+  other. To visually solve the convex hull of all vertices, we need to backlit
+  the film with strong light. The edges of our solution will shine the
+  brightest.
+</p>
+<p>
+  I didn't build this quantum computer with film (yet), because it would need a
+  lot of layers if we only have 50 vertices for example. To still give you a
+  visual impression, below you'll see a graph of 50 vertices and the edges of
+  each sub solution rendered by the browser. I did choose to give edges that
+  appear more often to be drawn with exponentially stronger color than edges
+  that appear less often, as visual enhancement.
+</p>
+<br />
 <div class="border">
   <canvas id="plot-convex-hulls" class="article-canvas pulsate"></canvas>
 </div>
