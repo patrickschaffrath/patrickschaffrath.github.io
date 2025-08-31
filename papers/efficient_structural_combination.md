@@ -1,14 +1,14 @@
 ---
 layout: paper
 title: Efficient structural combination
-revision: 0
+revision: 1
 ---
 
-Problems that support *efficient structural combination* can be solved in polynomial time by combining solutions for $$k$$-elementary sets of input permutations derived from any $$n$$-elementary input to the problem. For each supporting problem there is a static and small $$k$$ that governs the size and amount of input permutations.
+Problems that support *efficient structural combination* can be solved in polynomial time by combining solutions for $$k$$-elementary sets of input combinations derived from any $$n$$-elementary input to the problem. For each supporting problem there is a static and small $$k$$ that governs the size and amount of input combinations.
 
-For example we assume a problem with input $$\{a,b,c,d\}$$ and $$k=3$$. All sets of input permutations would be $$\{a,b,c\}$$, $$\{a,b,d\}$$, $$\{a,c,d\}$$ and $$\{b,c,d\}$$. If we can combine the solutions to the four sets into a solution to the original and larger input in polynomial time, our example problem would support *efficient structural combination*.
+For example we assume a problem with input $$\{a,b,c,d\}$$ and $$k=3$$. All sets of input combinations would be $$\{a,b,c\}$$, $$\{a,b,d\}$$, $$\{a,c,d\}$$ and $$\{b,c,d\}$$. If we can combine the solutions to the four sets into a solution to the original and larger input in polynomial time, our example problem would support *efficient structural combination*.
 
-We let $$k \in \mathbb{N}, k > 0$$ and $$n \in \mathbb{N}, n \ge k$$, which gives an upper limit of $${n\choose k} = \frac{n!}{k!(n-k)!} \le n^k$$ permutations for any $$n$$-elementary input.
+We let $$k \in \mathbb{N}, k > 0$$ and $$n \in \mathbb{N}, n \ge k$$, which gives an upper limit of $${n\choose k} = \frac{n!}{k!(n-k)!} \le n^k$$ combinations for any $$n$$-elementary input.
 
 For a problem to support *efficient structural combination*, we might have to convert inputs into a normalized form which does not change the outcome of problem instances, but is important to make every input compatible. Of course this normalization step is not allowed to take more than polynomial time.
 
@@ -64,16 +64,16 @@ This should follow from the fact that every decision problem in *P* can be repre
 Supporting *efficient structural combination* as an inherent property of decision problems in *P*.
 We do not always have to go down to Boolean Circuit representations to get to that property.
 
-2SAT supports *efficient structural combination* for $$k = 2$$. We take the implicative normal form of each clause. For example $$A \lor B$$ would become $$\lnot A \implies B$$ and $$\lnot B \implies A$$, with solutions $$(A = 0 \land B = 1)\ \lor$$ $$(A = 1 \land B = 0)\ \lor$$ $$(A = 1 \land B = 1)$$.
+2-SAT supports *efficient structural combination* for $$k = 2$$. We take the implicative normal form of each clause. For example $$A \lor B$$ would become $$\lnot A \implies B$$ and $$\lnot B \implies A$$, with solutions $$(A = 0 \land B = 1)\ \lor$$ $$(A = 1 \land B = 0)\ \lor$$ $$(A = 1 \land B = 1)$$.
 
 By transitively combining all implications, we can have two outcomes:
 
 1. There is a literal $$C$$ with two implication chains, one where $$C = 1$$ implies $$\lnot C = 1$$ and one where $$\lnot C = 1$$ implies $$C = 1$$. A contradiction which makes the problem instance unsatisfiable.
 2. There is no such literal $$C$$ and the problem instance is satisfiable.
 
-2D Convex Hull supports *efficient structural combination* for $$k = 4$$. The combinatorial part works by counting edge occurrences over all solutions for permutations of four vertices. All edges that are part of the convex hull occur equally often and most importantly more often than any other edges.
+2D Convex Hull supports *efficient structural combination* for $$k = 4$$. The combinatorial part works by counting edge occurrences over all solutions for combinations of four vertices. All edges that are part of the convex hull occur equally often and most importantly more often than any other edges.
 
-TSP Nearest Neighbour Heuristic supports *efficient structural combination* for $$k = 3$$. For every permutation of three vertices there are three routes, as we have to include solutions for every starting vertex.
+TSP Nearest Neighbour Heuristic supports *efficient structural combination* for $$k = 3$$. For every combination of three vertices there are three routes, as we have to include solutions for every starting vertex.
 
 If $$n$$ is $$3$$ and the starting vertex is $$s$$, we just have to pick the solution that starts with $$s$$ from three routes.
 
@@ -81,7 +81,7 @@ If $$n$$ is more than $$3$$ and the starting vertex is $$s$$, we collect all sol
 
 We proceed by taking $$s'$$ as new starting vertex to collect all solutions that start with $$s'$$ and don’t include any previous starting vertex.
 
-Here is an example for vertices $$a, b, c, d$$ with the distance relationships $$dist(a,d) < dist(a,b) < dist(a,c)$$ and $$dist(b,a) < dist(b,d) < dist(b,c)$$ and $$dist(c,a) < dist(c,d) < dist(c,b)$$ and $$dist(d,a) < dist(d,b) < dist(d,c)$$. The $$4\choose 3$$ permutations are $$\{a,b,c\}$$, $$\{a,b,d\}$$, $$\{a,c,d\}$$ and $$\{b,c,d\}$$. The solutions are $$\{(a,b,c),(b,a,c),(c,a,b)\}$$ and $$\{(a,d,b),(b,a,d),(d,a,b)\}$$ and $$\{(a,d,c),(c,a,d),(d,a,c)\}$$ and $$\{(b,d,c),(c,d,b),(d,b,c)\}$$.
+Here is an example for vertices $$a, b, c, d$$ with the distance relationships $$dist(a,d) < dist(a,b) < dist(a,c)$$ and $$dist(b,a) < dist(b,d) < dist(b,c)$$ and $$dist(c,a) < dist(c,d) < dist(c,b)$$ and $$dist(d,a) < dist(d,b) < dist(d,c)$$. The $$4\choose 3$$ combinations are $$\{a,b,c\}$$, $$\{a,b,d\}$$, $$\{a,c,d\}$$ and $$\{b,c,d\}$$. The solutions are $$\{(a,b,c),(b,a,c),(c,a,b)\}$$ and $$\{(a,d,b),(b,a,d),(d,a,b)\}$$ and $$\{(a,d,c),(c,a,d),(d,a,c)\}$$ and $$\{(b,d,c),(c,d,b),(d,b,c)\}$$.
 
 To find the solution for $$b$$ as starting vertex, we first collect all solutions that start with $$b$$ and get $$\{(b,a,c),(b,a,d),(b,d,c)\}$$. We see that $$a$$ appears most often directly after $$b$$, so $$a$$ is the nearest neighbour of $$b$$. Because we are left with three vertices now, we have to pick the solution that starts with $$a$$ and doesn’t include $$b$$, which is $$(a,d,c)$$.
 The solution thus is $$b \to a \to d \to c \to b$$.
@@ -96,10 +96,14 @@ Assume $$s$$ is our starting node and $$d$$ is our ending node. We need to go ov
 
 Using this approach for the Longest Path Problem for simple paths by picking the longest transitive path instead of the shortest transitive path will only be heuristic and not yield the longest simple path for every problem instance.
 
+### Trying to extend Horn-SAT
+
+We could try to extend Horn-SAT by clauses that include two positive literals, like $$A \implies B \lor C$$. We can add a new combination step to our existing *efficient structural combination* steps, that branches into $$B = 1$$ and into $$C = 1$$. This extended form, which lies between Horn-SAT and 3-SAT, supports *efficient structural combination* until a certain degree. It shows us, that easing problem definition might not abruptly cut off the property of *efficient structural combination*, but gradually.
+
 ## Notes
 
 *Efficient structural combination* works with very limited, primitive tools, with symbols and their relationships. With those it combines sub solutions to global solutions. Having all sub solutions, finding a global solution is just like filtering and sorting.
 
-With *efficient structural combination*, listing a maximum of $$n^k$$ permutations can always be done in polynomial time. Each solution to a permutation of $$k$$ elements can always be found in polynomial time, even by brute force. This is true for every problem in *NP*. Only the combinatorial part is key to show that a problem is in *P*.
+With *efficient structural combination*, listing a maximum of $$n^k$$ combinations can always be done in polynomial time. Each solution to a combination of $$k$$ elements can always be found in polynomial time, even by brute force. This is true for every problem in *NP*. Only the combinatorial part is key to show that a problem is in *P*.
 
 This paper is halfway between science and art. I truly believe that *efficient structural combination* is a powerful tool and even able to draw a line between complexity classes, although I’m not able to strictly proof it yet.
