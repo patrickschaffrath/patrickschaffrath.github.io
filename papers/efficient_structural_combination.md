@@ -1,7 +1,7 @@
 ---
 layout: paper
 title: Efficient structural combination
-revision: 1
+revision: 2
 ---
 
 Problems that support *efficient structural combination* can be solved in polynomial time by combining solutions for $$k$$-elementary sets of input combinations derived from any $$n$$-elementary input to the problem. For each supporting problem there is a static and small $$k$$ that governs the size and amount of input combinations.
@@ -16,12 +16,7 @@ For a problem to support *efficient structural combination*, we might have to co
 
 ### Relation to *P-complete*
 
-We assume a decision problem $$P_A$$ supporting *efficient structural combination*. If $$P_A$$ is a member of *P-complete*, it should follow that all members of *P-complete* support it.
-In the end, every member of *P-complete* is a representative of one single abstract decision problem, that supports *efficient structural combination*.
-
-#### $$P_A$$ can be Monotone Circuit Value Problem
-
-MCVP supports *efficient structural combination* for $$k = 1$$, using only gates of exactly two inputs and exactly one output. For every of the two possible gates of MCVP we have equations with the following solutions:
+Monotone Circuit Value Problem supports *efficient structural combination* for $$k = 1$$, using only gates of exactly two inputs and exactly one output. For every of the two possible gates of MCVP we have equations with the following solutions:
 
 1. $$x \land y = z$$ with solutions $$0 \land 0 = 0$$ or $$0 \land 1 = 0$$ or $$1 \land 0 = 0$$ or $$1 \land 1 = 1$$
 2. $$a \lor b = c$$ with solutions $$0 \lor 0 = 0$$ or $$0 \lor 1 = 1$$ or $$1 \lor 0 = 1$$ or $$1 \lor 1 = 1$$
@@ -30,9 +25,7 @@ For an input of $$n$$ gates we have $$m$$ starting gates that have non variable 
 
 The last variable we substituted is the output of the final gate and gives us the answer to the problem instance.
 
-#### $$P_A$$ can be Horn-SAT
-
-Horn-satisfiability supports *efficient structural combination* for $$k = 3$$. For every Horn clause there is a set of equivalent Horn clauses with three literals each, by applying the following rules:
+Horn-SAT supports *efficient structural combination* for $$k = 3$$. For every Horn clause there is a set of equivalent Horn clauses with three literals each, by applying the following rules:
 
 1. $$A \Leftrightarrow$$ $$(1 \land 1 \implies A)$$
 2. $$\lnot A \Leftrightarrow$$ $$(A \land 1 \implies 0)$$
@@ -49,20 +42,10 @@ This reduction will either end unsatisfiable if there is some set of solutions t
 
 ### Relation to *NP-complete*
 
-If any member of *NP-complete* does not support *efficient structural combination*, then *P* should not equal *NP*.
-
-This follows from *P-complete* being equal to *NP-complete* if *P* is equal to *NP*. Since every member of *P-complete* would support *efficient structural combination*, every member of *NP-complete* should support it, too.
-
-We have to show that no constant $$k$$ can be found for a problem of *NP-complete* and that we will always depend on $$n$$ when trying to combine sub solutions. For example we can easily discover Hamiltonian Paths for problem instances of size $$2n$$, if we already have all sub solutions of size $$n+1$$. We have to look for pairs of solutions where two starting and ending vertices overlap and where the combined amount of unique vertices is $$2n$$.
+If no problem of *NP-complete* does support *efficient structural combination*, we will always depend on $$n$$ when trying to combine sub solutions. For example we can easily discover Hamiltonian Paths for problem instances of size $$2n$$, if we already have all sub solutions of size $$n+1$$. We have to look for pairs of solutions where two starting and ending vertices overlap and where the combined amount of unique vertices is $$2n$$.
 We could recursively apply the above to sub solutions, but the further we go down in size, the more we need to combine sub solutions and the amount of combinatorial steps will grow exponentially. This approach will not give us polynomial runtime, not even for problems that are known to be in *P*.
 
 ### Relation to *P*
-
-Every decision problem in *P* should support *efficient structural combination*.
-This should follow from the fact that every decision problem in *P* can be represented by a uniform family of polynomial sized Boolean Circuits and the fact that all of those circuits can be evaluated by using MCVP.
-
-Supporting *efficient structural combination* as an inherent property of decision problems in *P*.
-We do not always have to go down to Boolean Circuit representations to get to that property.
 
 2-SAT supports *efficient structural combination* for $$k = 2$$. We take the implicative normal form of each clause. For example $$A \lor B$$ would become $$\lnot A \implies B$$ and $$\lnot B \implies A$$, with solutions $$(A = 0 \land B = 1)\ \lor$$ $$(A = 1 \land B = 0)\ \lor$$ $$(A = 1 \land B = 1)$$.
 
@@ -88,7 +71,7 @@ The solution thus is $$b \to a \to d \to c \to b$$.
 
 ### Shortest Path Problem and Longest Path Problem
 
-Both problems seem very similar, one is like the inverse of the other. We know that the shortest simple path can be found in polynomial time and can show that the problem supports *efficient structural combination*. On the other hand, the longest simple path might not be found in polynomial time, as this decision problem is in *NP-complete*. If the Longest Path Problem supports *efficient structural combination* for simple paths, then *P* does equal *NP* and if it does not support *efficient structural combination* for simple paths, then *P* should not equal *NP*.
+Both problems seem very similar, one is like the inverse of the other. We know that the shortest simple path can be found in polynomial time and can show that the problem supports *efficient structural combination*. On the other hand, the longest simple path might not be found in polynomial time, as this decision problem is in *NP-complete*.
 
 The Shortest Path Problem does support *efficient structural combination* for simple paths and $$k = 2$$. We have to work with normalized inputs that only contain edges of the same positive weight $$w$$. The single positive weight $$w$$ could be $$1$$ or $$0.1$$ for example. For each node we list all shortest simple paths that are reachable within one edge. Those paths go through two nodes and have total weight of $$w$$ each.
 
@@ -106,4 +89,4 @@ We could try to extend Horn-SAT by clauses that include two positive literals, l
 
 With *efficient structural combination*, listing a maximum of $$n^k$$ combinations can always be done in polynomial time. Each solution to a combination of $$k$$ elements can always be found in polynomial time, even by brute force. This is true for every problem in *NP*. Only the combinatorial part is key to show that a problem is in *P*.
 
-This paper is halfway between science and art. I truly believe that *efficient structural combination* is a powerful tool and even able to draw a line between complexity classes, although I’m not able to strictly proof it yet.
+This paper is halfway between science and art. I truly believe that *efficient structural combination* is a powerful tool and maybe even able to draw a line between complexity classes.
