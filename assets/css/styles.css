@@ -80,6 +80,35 @@ main:has(.gallery-container) {
         filter: blur(0);
 }
 
+.story-title {
+        text-align: center;
+        margin-bottom: 40px;
+}
+
+.story p {
+        margin-bottom: 0;
+}
+
+.story-byline {
+        font-size: medium;
+        font-style: italic;
+        color: #666;
+        margin-top: 60px;
+        margin-bottom: 0;
+}
+
+.story-byline::before {
+        content: "";
+        display: block;
+        width: 100px;
+        border-top: 1px solid #ccc;
+        margin-bottom: 10px;
+}
+
+.story .indent {
+        padding-left: 2em;
+}
+
 .paper-revision {
         text-align: right;
         margin-bottom: -10px;
