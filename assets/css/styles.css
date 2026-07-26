@@ -119,6 +119,12 @@ main:has(.gallery-container) {
         height: 500px;
 }
 
+.about-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+}
+
 .about-profile-image {
         width: 200px;
         height: 200px;
