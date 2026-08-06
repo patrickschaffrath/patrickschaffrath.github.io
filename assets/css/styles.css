@@ -85,6 +85,17 @@ main:has(.gallery-container) {
         margin-bottom: 40px;
 }
 
+.story-title.has-subtitle {
+        margin-bottom: 10px;
+}
+
+.story-subtitle {
+        text-align: center;
+        font-size: 1.25rem;
+        color: #666;
+        margin-bottom: 40px;
+}
+
 .story p {
         margin-bottom: 0;
 }
@@ -107,6 +118,21 @@ main:has(.gallery-container) {
 
 .story .indent {
         padding-left: 2em;
+}
+
+.story .indent-first {
+        text-indent: 2em;
+}
+
+.story .space-before {
+        margin-top: 1em;
+}
+
+.story sup {
+        font-size: 0.7em;
+        line-height: 0;
+        color: #666;
+        margin-left: 0.1em;
 }
 
 .paper-revision {
